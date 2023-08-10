@@ -1,24 +1,26 @@
-import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { BiHomeHeart, BiDownload } from "react-icons/bi";
 import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdOutlineLightMode } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   const activeStyle = {
     color: "#e6429c",
   };
+  const homeColor = {
+    color: "inherit",
+  };
   return (
     <header>
-      <div className="logo">
+      <Link to={"/"} className="logo">
         <img src={logo} alt="photo of Vujadin" />
         <p>Vujadin Dagovic</p>
-      </div>
+      </Link>
       <nav>
         <NavLink
-          to={"/home"}
+          to={"/"}
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           <BiHomeHeart className="icon" /> Home

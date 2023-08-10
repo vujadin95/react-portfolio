@@ -4,11 +4,100 @@
   padding: 0;
 }
 
+.app-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 0 30px;
+}
+
 html {
   font-size: 62.5%;
 }
 
 html,
 body {
+  background-color: #0b1421;
+  color: #FFFFFF;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 }
+
+/* header component start */
+header {
+  font-size: 2rem;
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 120px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFF7ED;
+}
+
+header>nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1em;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  position: relative;
+}
+
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 2px;
+  transition: all ease-in-out 0.4s;
+}
+
+header nav a:hover::after {
+  width: 100%;
+  background: #e6429c;
+}
+
+/* header component end */
+
+/* home page start */
+main {
+  min-height: 100vh;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-image-container {
+  max-width: 500px;
+}
+
+.home-image-container img {
+  width: 100%;
+}
+
+/* home page end */
