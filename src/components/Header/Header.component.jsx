@@ -2,29 +2,27 @@ import logo from "../../assets/logo.png";
 import { BiHomeHeart, BiDownload } from "react-icons/bi";
 import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { MdOutlineLightMode } from "react-icons/md";
 import { NavLink, Link } from "react-router-dom";
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
 
 const Navbar = () => {
   const activeStyle = {
     color: "#e6429c",
   };
-  const homeColor = {
-    color: "inherit",
-  };
   return (
     <header>
       <Link to={"/"} className="logo">
-        <img src={logo} alt="photo of Vujadin" />
-        <p>Vujadin Dagovic</p>
+        <p>
+          <span>{"<"}</span>V<span>ujadin</span> D
+          <span>
+            agovic<span>{` />`}</span>
+          </span>
+        </p>
       </Link>
       <nav>
-        <NavLink
-          to={"/"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-        >
+        <Link to={"/"}>
           <BiHomeHeart className="icon" /> Home
-        </NavLink>
+        </Link>
         <NavLink
           to={"/about"}
           style={({ isActive }) => (isActive ? activeStyle : null)}
@@ -45,7 +43,7 @@ const Navbar = () => {
           <BsEnvelopeHeart className="icon" />
           Contact
         </NavLink>
-        <MdOutlineLightMode />
+        {/* <ToggleTheme /> */}
       </nav>
     </header>
   );

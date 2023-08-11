@@ -1,16 +1,32 @@
 import img from "../assets/home-image.png";
+import Typewriter from "typewriter-effect";
+
 const Home = () => {
   return (
     <section className="home-page">
       <div className="home-text-content">
-        <h2>Lorem, ipsum dolor.</h2>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur
-          nobis praesentium doloremque corporis omnis ducimus magnam nemo,
-          aperiam, recusandae alias sapiente quidem aliquid veritatis quas amet!
-          Ea ab eligendi a excepturi autem. Pariatur suscipit sunt qui debitis
-          id explicabo eveniet.
-        </p>
+        <h2 className="home-text-content-title">
+          Hello,{" "}
+          <span className="greeting">
+            Everyone! <span className="waving">👋</span>
+          </span>
+        </h2>
+
+        <div className="hero-page-text-desc">
+          <span>I am Vujadin and I'm </span>
+          <span className="home-text-typing">
+            <Typewriter
+              options={{
+                strings: ["JavaScript", "React", "NextJS"],
+                autoStart: true,
+                loop: true,
+                delay: 150,
+                deleteSpeed: 150,
+              }}
+            />
+          </span>
+          <p> Frontend Developer</p>
+        </div>
       </div>
       <div className="home-image-container">
         <img src={img} alt="" />

@@ -14,26 +14,23 @@ const ParticlesBackground = () => {
           value: 100,
         },
         size: {
-          value: 4,
+          value: 2,
           random: true,
           anim: {
             enable: true,
-            speed: 5,
+            speed: 2,
             size_min: 0.1,
-            sync: false,
+            sync: true,
           },
-        },
-        color: {
-          value: "#e6429c",
         },
         opacity: {
           value: 1,
           random: true,
           anim: {
             enable: true,
-            speed: 3,
+            speed: 1,
             opacity_min: 0.1,
-            sync: false,
+            sync: true,
           },
         },
       },
