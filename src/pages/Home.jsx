@@ -1,5 +1,6 @@
 import img from "../assets/home-image.png";
 import Typewriter from "typewriter-effect";
+import "../styles/homePage.css";
 
 const Home = () => {
   return (
@@ -11,7 +12,6 @@ const Home = () => {
             Everyone! <span className="waving">👋</span>
           </span>
         </h2>
-
         <div className="hero-page-text-desc">
           <span>I am Vujadin and I'm </span>
           <span className="home-text-typing">

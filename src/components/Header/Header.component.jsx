@@ -1,16 +1,27 @@
-import logo from "../../assets/logo.png";
 import { BiHomeHeart, BiDownload } from "react-icons/bi";
 import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import ToggleTheme from "../ToggleTheme/ToggleTheme";
+import { useState } from "react";
+import "../../styles/header.css";
 
 const Navbar = () => {
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY > 70) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
   const activeStyle = {
     color: "#e6429c",
   };
+  window.addEventListener("scroll", changeColor);
+
   return (
-    <header>
+    <header className={color ? "header-bg" : ""}>
       <Link to={"/"} className="logo">
         <p>
           <span>{"<"}</span>V<span>ujadin</span> D
@@ -43,8 +54,8 @@ const Navbar = () => {
           <BsEnvelopeHeart className="icon" />
           Contact
         </NavLink>
-        {/* <ToggleTheme /> */}
       </nav>
+      <div className="hamburger-btn">click</div>
     </header>
   );
 };

@@ -1,9 +1,10 @@
 import { FiPaperclip } from "react-icons/fi";
-import { AiFillGithub, AiFillCodepenCircle } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { BsDiscord, BsEnvelopeHeart } from "react-icons/bs";
 import { SiNetlify } from "react-icons/si";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../../styles/socialIcons.css";
 const SocialsIcons = () => {
   const [isOpen, setIsOpen] = useState(false);
 

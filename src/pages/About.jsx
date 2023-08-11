@@ -1,11 +1,8 @@
-import ParticlesBackground from "../components/Particles/ParticlesBackground";
-
 const About = () => {
   return (
-    <div>
+    <section>
       <h1>About page</h1>
-      {/* <ParticlesBackground /> */}
-    </div>
+    </section>
   );
 };
 export default About;

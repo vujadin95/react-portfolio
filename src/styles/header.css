@@ -1,0 +1,105 @@
+header {
+  position: fixed;
+  width: 100%;
+  max-width: inherit;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 10px var(--padding-x);
+}
+
+.header-bg {
+  background-color: red;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo p {
+  font-size: 2.5rem;
+  transition: color 0.2s ease;
+}
+
+.logo p span:first-child {
+  color: var(--hover-color);
+  transition: color 0.2s ease;
+}
+
+.logo p:hover {
+  color: var(--hover-color);
+}
+
+.logo p:hover span:first-child {
+  color: var(--white-color);
+}
+
+header>nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1.5em;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  position: relative;
+}
+
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 2px;
+  transition: all ease-in-out 0.4s;
+}
+
+header nav a:hover::after {
+  width: 100%;
+  background-color: var(--hover-color);
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+@media (max-width: 848px) {
+  header>nav {
+    gap: 1em;
+    transition: gap 200ms ease-in-out;
+  }
+
+  header {
+    font-size: 1.8rem;
+  }
+
+  .logo p {
+    font-size: 2rem;
+    transition: font-size 200ms ease-in-out;
+  }
+}
+
+@media (max-width: 688px) {
+  header>nav {
+    position: absolute;
+    flex-direction: column;
+    background-color: red;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-width: inherit;
+  }
+
+  .hamburger-btn {
+    display: block;
+    margin-left: auto;
+  }
+}
