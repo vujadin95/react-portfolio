@@ -6,10 +6,12 @@
   height: 100%;
 }
 
-
-
 .home-image-container {
   max-width: 50%;
+}
+
+.home-text-content {
+  padding-top: 30px;
 }
 
 .home-image-container img {

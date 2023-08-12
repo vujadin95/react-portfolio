@@ -20,6 +20,8 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeColor);
 
+  const handleClickOnLink = () => {};
+
   return (
     <header className={color ? "header-bg" : ""}>
       <Link to={"/"} className="logo">
@@ -31,16 +33,18 @@ const Navbar = () => {
         </p>
       </Link>
       <nav className={isOpen ? "active" : ""}>
-        <Link to={"/"}>
+        <Link to={"/"} onClick={() => setIsOpen(false)}>
           <BiHomeHeart className="icon" /> Home
         </Link>
         <NavLink
+          onClick={() => setIsOpen(false)}
           to={"/about"}
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           <BsPerson className="icon" /> About
         </NavLink>
         <NavLink
+          onClick={() => setIsOpen(false)}
           to={"/projects"}
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
@@ -48,6 +52,7 @@ const Navbar = () => {
           Projects
         </NavLink>
         <NavLink
+          onClick={() => setIsOpen(false)}
           to={"/contact"}
           style={({ isActive }) => (isActive ? activeStyle : null)}
         >
@@ -57,9 +62,11 @@ const Navbar = () => {
       </nav>
       <div
         onClick={() => setIsOpen((prevState) => !prevState)}
-        className="hamburger-btn"
+        className={`hamburger-btn ${isOpen ? "active" : ""}`}
       >
-        <span>line</span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </header>
   );

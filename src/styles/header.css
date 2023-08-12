@@ -122,7 +122,38 @@ header nav a:hover::after {
   }
 
   .hamburger-btn {
-    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
     margin-left: auto;
+    width: 25px;
+    height: 25px;
+    display: flex;
   }
+
+  .hamburger-btn span {
+    width: 25px;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: var(--hover-color);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .hamburger-btn span:nth-child(2) {
+    width: 80%;
+    align-self: flex-end;
+  }
+
+  .hamburger-btn.active span:nth-child(2) {
+    width: 0;
+  }
+
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(11px) rotate(-45deg);
+  }
+
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(45deg);
+  }
+
 }
