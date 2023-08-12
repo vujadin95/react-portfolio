@@ -88,14 +88,37 @@ header nav a:hover::after {
 }
 
 @media (max-width: 688px) {
+  header {
+    background-color: #292929;
+    z-index: 2;
+  }
+
   header>nav {
     position: absolute;
     flex-direction: column;
-    background-color: red;
+    align-items: flex-end;
+    gap: 4rem;
+    font-size: 2rem;
+    background-color: #292929;
     top: 70px;
-    left: 0;
-    width: 100%;
-    max-width: inherit;
+    height: 100vh;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.25s ease-in;
+  }
+
+  nav.active {
+    width: 60%;
+  }
+
+  header nav a {
+    gap: 0.5em;
+    margin-right: 3rem;
+  }
+
+  header nav a:first-child {
+    padding-top: 3rem;
   }
 
   .hamburger-btn {

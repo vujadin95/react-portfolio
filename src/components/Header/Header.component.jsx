@@ -2,12 +2,12 @@ import { BiHomeHeart, BiDownload } from "react-icons/bi";
 import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
-import ToggleTheme from "../ToggleTheme/ToggleTheme";
 import { useState } from "react";
 import "../../styles/header.css";
 
 const Navbar = () => {
   const [color, setColor] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const changeColor = () => {
     if (window.scrollY > 70) {
       setColor(true);
@@ -30,7 +30,7 @@ const Navbar = () => {
           </span>
         </p>
       </Link>
-      <nav>
+      <nav className={isOpen ? "active" : ""}>
         <Link to={"/"}>
           <BiHomeHeart className="icon" /> Home
         </Link>
@@ -55,7 +55,12 @@ const Navbar = () => {
           Contact
         </NavLink>
       </nav>
-      <div className="hamburger-btn">click</div>
+      <div
+        onClick={() => setIsOpen((prevState) => !prevState)}
+        className="hamburger-btn"
+      >
+        <span>line</span>
+      </div>
     </header>
   );
 };
