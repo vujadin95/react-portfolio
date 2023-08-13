@@ -1,4 +1,4 @@
-import img from "../assets/home-image.png";
+import img from "../assets/home-image-1.png";
 import Typewriter from "typewriter-effect";
 import "../styles/homePage.css";
 

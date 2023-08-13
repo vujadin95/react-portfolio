@@ -11,6 +11,19 @@
   --padding-x: 30px;
 }
 
+@media (max-width: 688px) {
+  :root {
+    --padding-x: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --padding-x: 15px;
+  }
+}
+
+
 html {
   font-size: 62.5%;
   user-select: none;
@@ -25,16 +38,13 @@ body {
 }
 
 main {
-  height: 100%;
-  /* display: flex;
-  align-items: center; */
   padding: 70px var(--padding-x) 0;
 }
 
 .app-wrapper {
   max-width: 1300px;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--dark-background-color);
   position: relative;
 }

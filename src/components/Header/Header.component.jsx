@@ -9,7 +9,7 @@ const Navbar = () => {
   const [color, setColor] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const changeColor = () => {
-    if (window.scrollY > 70) {
+    if (window.scrollY > 20) {
       setColor(true);
     } else {
       setColor(false);
@@ -20,10 +20,14 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeColor);
 
-  const handleClickOnLink = () => {};
-
   return (
-    <header className={color ? "header-bg" : ""}>
+    <header
+      className={`${color ? "header-bg" : ""} ${
+        isOpen
+          ? (document.body.style.overflow = "hidden")
+          : (document.body.style.overflow = "visible")
+      }`}
+    >
       <Link to={"/"} className="logo">
         <p>
           <span>{"<"}</span>V<span>ujadin</span> D
