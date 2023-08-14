@@ -1,0 +1,70 @@
+.submit-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.submit-message label {
+  font-size: 2rem;
+  padding: 1em 0.5em 0.5em;
+}
+
+.submit-message input,
+.submit-message textarea {
+  z-index: 1;
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 10px 5px;
+  border: 1px solid #343232;
+  border-bottom: 1px solid var(--white-color);
+  background-color: #292929;
+  color: var(--white-color);
+}
+
+.submit-message textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.submit-message input:focus,
+.submit-message textarea:focus {
+  border: 1px solid var(--hover-color);
+  outline: none;
+}
+
+.submit-message input::placeholder {
+  color: var(--hover-color);
+}
+
+.submit-message button {
+  font-size: 2rem;
+  font-family: inherit;
+  margin-top: 2rem;
+  padding: 0.5em 0;
+  cursor: pointer;
+  background-color: var(--hover-color);
+  border: none;
+  border-radius: 3px;
+  color: var(--white-color);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  z-index: 1;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-message button:hover {
+  background-color: #ba1a72;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid var(--hover-color);
+  -webkit-text-fill-color: var(--white-color);
+  -webkit-box-shadow: 0 0 0px 1000px #292929 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
