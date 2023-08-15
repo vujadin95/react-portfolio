@@ -1,3 +1,7 @@
+.contact__page {
+  padding: 70px 0;
+}
+
 .submit-message {
   display: flex;
   flex-direction: column;
@@ -5,9 +9,18 @@
   margin: 0 auto;
 }
 
+.contact__page-desc {
+  font-size: 2rem;
+  text-align: center;
+}
+
 .submit-message label {
   font-size: 2rem;
   padding: 1em 0.5em 0.5em;
+}
+
+.submit-message label span {
+  color: var(--hover-color);
 }
 
 .submit-message input,
@@ -15,12 +28,13 @@
   z-index: 1;
   font-family: inherit;
   font-size: 1.8rem;
-  padding: 10px 5px;
-  border: 1px solid #343232;
-  border-bottom: 1px solid var(--white-color);
+  padding: 10px;
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
   background-color: #292929;
   color: var(--white-color);
 }
+
 
 .submit-message textarea {
   resize: none;
@@ -33,11 +47,32 @@
   outline: none;
 }
 
-.submit-message input::placeholder {
+.submit-message input::placeholder,
+.submit-message textarea::placeholder {
   color: var(--hover-color);
 }
 
+.submit-message span.name-error,
+.submit-message span.email-error {
+  color: #F87171;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  display: none;
+  text-align: center;
+}
+
+.submit-message .input-name:invalid[focused="true"]~span.name-error {
+  display: block;
+}
+
+.submit-message .input-email:invalid[focused="true"]~span.email-error {
+  display: block;
+}
+
 .submit-message button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2rem;
   font-family: inherit;
   margin-top: 2rem;
@@ -48,14 +83,90 @@
   border-radius: 3px;
   color: var(--white-color);
   font-weight: 600;
-  letter-spacing: 1.5px;
   z-index: 1;
   transition: background-color 0.2s ease-in-out;
+}
+
+
+.submit-message button:focus {
+  border: none;
+  outline: 1px solid var(--white-color)
 }
 
 .submit-message button:hover {
   background-color: #ba1a72;
 }
+
+.submit-message button:disabled:hover {
+  cursor: not-allowed;
+}
+
+.send-arrow {
+  font-size: 3rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submit-message button:hover .send-arrow {
+  transform: translateX(10px);
+}
+
+.message-sent {
+  position: absolute;
+  width: 360px;
+  padding: 10px;
+  background-color: #2394e5;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: slideMessage 1.5s ease-in;
+}
+
+@keyframes slideMessage {
+  from {
+    top: 0;
+    opacity: 0
+  }
+
+  to {
+    top: 80px;
+    opacity: 1
+  }
+}
+
+@media (max-width: 688px) {
+  .submit-message {
+    width: 90%;
+  }
+
+  .submit-message label {
+    font-size: 1.6rem;
+    padding: 1em 0.5em 0.5em;
+  }
+
+  .contact__page-desc {
+    font-size: 1.8rem;
+  }
+
+  .submit-message input,
+  .submit-message textarea {
+    font-size: 1.4rem;
+  }
+
+  .submit-message button {
+    font-size: 1.8rem;
+    margin-top: 1em;
+  }
+
+  .message-sent {
+
+    width: 300px;
+    font-size: 1.2rem;
+  }
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

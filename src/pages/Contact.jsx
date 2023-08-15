@@ -1,78 +1,116 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "/src/styles/contact.css";
 
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 const Contact = () => {
   const [data, setData] = useState({ name: "", email: "", message: "" });
-
-  const form = useRef();
-
+  const [isNameInputFocused, setIsNameInputFocused] = useState(false);
+  const [isEmailInputFocused, setIsEmailInputFocused] = useState(false);
+  const [status, setStatus] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
+      .send("service_jqad06m", "template_xwhhvqn", data, "jSF9WVkwRknZMxdZo")
+      .then((response) => {
+        setData({ name: "", email: "", message: "" });
+        setIsNameInputFocused(false);
+        setIsEmailInputFocused(false);
+        setStatus("SUCCESS");
+      }),
+      (error) => {
+        console.log("FAILED", error);
+      };
+  };
+  useEffect(() => {
+    if (status === "SUCCESS") {
+      setTimeout(() => {
+        setStatus("");
+      }, 3000);
+    }
+  }, [status]);
+
+  const messageSentText = () => {
+    return (
+      <div className="message-sent">
+        <p>Your message has been submited successfully.</p>
+      </div>
+    );
   };
 
   const handleFormChange = (e) => {
-    console.log(e.target.id);
-    let dataProp = e.target.id;
+    let dataProp = e.target.name;
     setData((prevData) => {
       return { ...prevData, [dataProp]: e.target.value };
     });
   };
 
+  const handleNameInputFocus = (e) => {
+    setIsNameInputFocused(true);
+  };
+  const handleEmailInputFocus = (e) => {
+    setIsEmailInputFocused(true);
+  };
+
   return (
-    <>
-      <form className="submit-message" ref={form} onSubmit={sendEmail}>
-        <label className="name-label" htmlFor="name">
-          Name
+    <section className="contact__page">
+      {status && messageSentText()}
+      <form className="submit-message" onSubmit={sendEmail}>
+        <p className="contact__page-desc">
+          Please feel free to contact me about anything.
+        </p>
+        <label className="name-label">
+          Name <span>*</span>
         </label>
         <input
           required
           onChange={(e) => handleFormChange(e)}
           value={data.name}
           type="text"
-          name="user_name"
-          id="name"
+          name="name"
           placeholder="Enter Your Name"
+          pattern="^[A-Za-z ]{3,16}$"
+          onBlur={handleNameInputFocus}
+          focused={isNameInputFocused.toString()}
+          className="input-name"
+          disabled={status}
         />
-        <label>Email</label>
+        <span className="name-error">
+          Your name should be 3-16 characters and shouldn't include any special
+          character.
+        </span>
+        <label>
+          Email <span>*</span>
+        </label>
         <input
           required
           onChange={(e) => handleFormChange(e)}
           value={data.email}
           type="email"
-          name="user_email"
-          id="email"
+          name="email"
           placeholder="Enter Your Email Address"
+          onBlur={handleEmailInputFocus}
+          focused={isEmailInputFocused.toString()}
+          className="input-email"
+          disabled={status}
         />
+        <span className="email-error">It should be valid email address.</span>
         <label>Message</label>
         <textarea
-          required
           onChange={(e) => handleFormChange(e)}
           value={data.message}
           rows={4}
-          id="message"
           name="message"
+          placeholder="Tell me something..."
+          disabled={status}
+          maxLength={1000}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={data.name === "" || data.email === ""}>
+          Send <MdKeyboardArrowRight className="send-arrow" />
+        </button>
       </form>
-      <div>{import.meta.env.VITE_SECRET}</div>
-    </>
+    </section>
   );
 };
 

@@ -8,6 +8,8 @@
   right: 30px;
   cursor: pointer;
   font-size: 3rem;
+  z-index: 5;
+
 }
 
 .social-icons-container {
