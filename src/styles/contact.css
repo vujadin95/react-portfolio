@@ -20,7 +20,7 @@
 }
 
 .submit-message label span {
-  color: var(--hover-color);
+  color: var(--pink-100);
 }
 
 .submit-message input,
@@ -29,10 +29,10 @@
   font-family: inherit;
   font-size: 1.8rem;
   padding: 10px;
-  border: 1px solid var(--white-color);
+  border: 1px solid var(--white);
   border-radius: 3px;
-  background-color: #292929;
-  color: var(--white-color);
+  background-color: var(--black-100);
+  color: var(--white);
 }
 
 
@@ -43,18 +43,18 @@
 
 .submit-message input:focus,
 .submit-message textarea:focus {
-  border: 1px solid var(--hover-color);
+  border: 1px solid var(--pink-100);
   outline: none;
 }
 
 .submit-message input::placeholder,
 .submit-message textarea::placeholder {
-  color: var(--hover-color);
+  color: var(--pink-100);
 }
 
 .submit-message span.name-error,
 .submit-message span.email-error {
-  color: #F87171;
+  color: var(--html-color);
   font-size: 1.2rem;
   padding-top: 1rem;
   display: none;
@@ -78,23 +78,27 @@
   margin-top: 2rem;
   padding: 0.5em 0;
   cursor: pointer;
-  background-color: var(--hover-color);
+  background-color: var(--pink-100);
   border: none;
   border-radius: 3px;
-  color: var(--white-color);
+  color: var(--white);
   font-weight: 600;
   z-index: 1;
   transition: background-color 0.2s ease-in-out;
 }
 
+input {
+  caret-color: var(--pink-200);
+}
+
 
 .submit-message button:focus {
   border: none;
-  outline: 1px solid var(--white-color)
+  outline: 1px solid var(--white)
 }
 
 .submit-message button:hover {
-  background-color: #ba1a72;
+  background-color: var(--pink-200);
 }
 
 .submit-message button:disabled:hover {
@@ -114,7 +118,7 @@
   position: absolute;
   width: 360px;
   padding: 10px;
-  background-color: #2394e5;
+  background-color: var(--tailwind-color);
   font-size: 1.4rem;
   border-radius: 5px;
   left: 50%;
@@ -174,8 +178,8 @@ input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
-  border: 1px solid var(--hover-color);
-  -webkit-text-fill-color: var(--white-color);
-  -webkit-box-shadow: 0 0 0px 1000px #292929 inset;
+  border: 1px solid var(--pink-100);
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--black-100) inset;
   transition: background-color 5000s ease-in-out 0s;
 }

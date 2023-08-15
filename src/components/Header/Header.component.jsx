@@ -1,78 +1,56 @@
-import { BiHomeHeart, BiDownload } from "react-icons/bi";
-import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { NavLink, Link } from "react-router-dom";
-import { useState } from "react";
 import "../../styles/header.css";
 
-const Navbar = () => {
-  const [color, setColor] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const changeColor = () => {
+import { useState, useRef, useEffect } from "react";
+import Logo from "./Logo.component";
+import Navbar from "./Navbar.component";
+import HamburgerMenu from "./HamburgerMenu.component";
+
+const Header = () => {
+  const [isMobileNav, setIsMobileNav] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const navRef = useRef();
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (isMobileNav && navRef.current && !navRef.current.contains(e.target)) {
+        setIsMobileNav(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [isMobileNav]);
+
+  const handleScroll = () => {
     if (window.scrollY > 20) {
-      setColor(true);
+      setIsScrolled(true);
     } else {
-      setColor(false);
+      setIsScrolled(false);
     }
   };
-  const activeStyle = {
-    color: "#e6429c",
-  };
-  window.addEventListener("scroll", changeColor);
+  window.addEventListener("scroll", handleScroll);
 
   return (
-    <header
-      className={`${color ? "header-bg" : ""} ${
-        isOpen
-          ? (document.body.style.overflow = "hidden")
-          : (document.body.style.overflow = "visible")
-      }`}
-    >
-      <Link to={"/"} className="logo">
-        <p>
-          <span>{"<"}</span>V<span>ujadin</span> D
-          <span>
-            agovic<span>{` />`}</span>
-          </span>
-        </p>
-      </Link>
-      <nav className={isOpen ? "active" : ""}>
-        <Link to={"/"} onClick={() => setIsOpen(false)}>
-          <BiHomeHeart className="icon" /> Home
-        </Link>
-        <NavLink
-          onClick={() => setIsOpen(false)}
-          to={"/about"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-        >
-          <BsPerson className="icon" /> About
-        </NavLink>
-        <NavLink
-          onClick={() => setIsOpen(false)}
-          to={"/projects"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-        >
-          <AiOutlineFundProjectionScreen className="icon" />
-          Projects
-        </NavLink>
-        <NavLink
-          onClick={() => setIsOpen(false)}
-          to={"/contact"}
-          style={({ isActive }) => (isActive ? activeStyle : null)}
-        >
-          <BsEnvelopeHeart className="icon" />
-          Contact
-        </NavLink>
-      </nav>
+    <header ref={navRef} className={isScrolled ? "black-bg" : ""}>
       <div
-        onClick={() => setIsOpen((prevState) => !prevState)}
-        className={`hamburger-btn ${isOpen ? "active" : ""}`}
+        className={`header-container ${
+          isMobileNav
+            ? (document.body.style.overflow = "hidden")
+            : (document.body.style.overflow = "visible")
+        }`}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <Logo setIsMobileNav={setIsMobileNav} />
+        <Navbar isMobileNav={isMobileNav} setIsMobileNav={setIsMobileNav} />
+        <HamburgerMenu
+          isMobileNav={isMobileNav}
+          setIsMobileNav={setIsMobileNav}
+        />
       </div>
     </header>
   );
 };
-export default Navbar;
+
+export default Header;

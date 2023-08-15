@@ -1,48 +1,54 @@
 header {
   position: fixed;
   width: 100%;
-  max-width: inherit;
+  left: 0;
+  top: 0;
   font-size: 2rem;
-  display: flex;
-  align-items: center;
-  padding: 10px var(--padding-x);
   z-index: 5;
 }
 
-.header-bg {
-  background-color: #292929;
+.header-container {
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 70px;
+  padding: 10px var(--padding-x);
+  transition: padding 0.2s ease-in-out;
+}
+
+.black-bg {
+  background-color: var(--black-100);
 }
 
 .logo {
-  height: 50px;
-}
-
-.logo p {
-  font-size: 2.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
   transition: color 0.2s ease;
 }
 
-.logo p span:first-child {
-  color: var(--hover-color);
+.logo__symbol {
+  color: var(--pink-100);
   transition: color 0.2s ease;
 }
 
-.logo p:hover {
-  color: var(--hover-color);
+.logo:hover {
+  color: var(--pink-100);
 }
 
-.logo p:hover span:first-child {
-  color: var(--white-color);
+.logo:hover .logo__symbol {
+  color: var(--white);
 }
 
-header>nav {
+.navigation__menu {
   display: flex;
   align-items: center;
   margin-left: auto;
   gap: 1.5em;
 }
 
-header a {
+.nav-link {
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -51,8 +57,7 @@ header a {
   position: relative;
 }
 
-
-header nav a::after {
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: -3px;
@@ -63,9 +68,9 @@ header nav a::after {
   transition: all ease-in-out 0.4s;
 }
 
-header nav a:hover::after {
+.nav-link:hover::after {
   width: 100%;
-  background-color: var(--hover-color);
+  background-color: var(--pink-100);
 }
 
 .hamburger-btn {
@@ -73,7 +78,7 @@ header nav a:hover::after {
 }
 
 @media (max-width: 848px) {
-  header>nav {
+  .navigation__menu {
     gap: 1em;
     transition: gap 200ms ease-in-out;
   }
@@ -90,17 +95,16 @@ header nav a:hover::after {
 
 @media (max-width: 688px) {
   header {
-    background-color: #292929;
-    z-index: 5;
+    background-color: var(--black-100);
   }
 
-  header>nav {
+  .navigation__menu {
     position: absolute;
     flex-direction: column;
     align-items: flex-end;
     gap: 4rem;
     font-size: 2rem;
-    background-color: #292929;
+    background-color: var(--black-100);
     top: 70px;
     height: 100vh;
     right: 0;
@@ -109,16 +113,17 @@ header nav a:hover::after {
     transition: width 0.25s ease-in;
   }
 
-  nav.active {
+  .navigation__menu.mobile {
+    z-index: 5;
     width: 60%;
   }
 
-  header nav a {
+  .nav-link {
     gap: 0.5em;
     margin-right: 3rem;
   }
 
-  header nav a:first-child {
+  .nav-link:first-child {
     padding-top: 3rem;
   }
 
@@ -132,29 +137,28 @@ header nav a:hover::after {
     display: flex;
   }
 
-  .hamburger-btn span {
+  .hamburger-line {
     width: 25px;
     height: 3px;
     border-radius: 1.5px;
-    background-color: var(--hover-color);
+    background-color: var(--pink-100);
     transition: all 0.2s ease-in-out;
   }
 
-  .hamburger-btn span:nth-child(2) {
+  .line-2 {
     width: 80%;
     align-self: flex-end;
   }
 
-  .hamburger-btn.active span:nth-child(2) {
+  .hamburger-btn.active .line-2 {
     width: 0;
   }
 
-  .hamburger-btn.active span:nth-child(1) {
+  .hamburger-btn.active .line-1 {
     transform: translateY(11px) rotate(-45deg);
   }
 
-  .hamburger-btn.active span:nth-child(3) {
+  .hamburger-btn.active .line-3 {
     transform: translateY(-11px) rotate(45deg);
   }
-
 }

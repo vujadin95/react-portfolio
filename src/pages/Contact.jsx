@@ -95,7 +95,9 @@ const Contact = () => {
           className="input-email"
           disabled={status}
         />
-        <span className="email-error">It should be valid email address.</span>
+        <span className="email-error">
+          It doesn't look like a real email address to me?
+        </span>
         <label>Message</label>
         <textarea
           onChange={(e) => handleFormChange(e)}

@@ -5,10 +5,24 @@
 }
 
 :root {
-  --dark-background-color: #272935;
-  --white-color: #FFFFFF;
-  --hover-color: #e6429c;
+
+  /* colors */
+  --bg-color: #272935;
+  --white: #FFFFFF;
+  --pink-100: #e6429c;
+  --pink-200: #ba1a72;
+  --black-100: #292929;
+  --html-color: #f97316;
+  --css-color: #4299e1;
+  --js-color: #FFD600;
+  --ts-color: #3178c6;
+  --react-color: #149ECA;
+  --nextjs-color: #000000;
+  --tailwind-color: #38BDF8;
+  --git-color: #F14E32;
+  /* spacing */
   --padding-x: 30px;
+  --padding-y: 70px;
 }
 
 @media (max-width: 688px) {
@@ -23,7 +37,6 @@
   }
 }
 
-
 html {
   font-size: 62.5%;
   user-select: none;
@@ -31,8 +44,8 @@ html {
 
 html,
 body {
-  background-color: var(--dark-background-color);
-  color: var(--white-color);
+  background-color: var(--bg-color);
+  color: var(--white);
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 }
@@ -45,6 +58,5 @@ main {
   max-width: 1300px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: var(--dark-background-color);
   position: relative;
 }
