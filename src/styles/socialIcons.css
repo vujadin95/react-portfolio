@@ -51,12 +51,13 @@
 
 .social-icons-btn:hover {
   background-color: var(--pink-200);
+  animation: none;
 }
 
 .social-icons-btn.isOpen {
   background-color: var(--white);
   color: var(--bg-color);
-  animation: unset;
+  animation: none;
 }
 
 @keyframes glowSocialIconsBtn {

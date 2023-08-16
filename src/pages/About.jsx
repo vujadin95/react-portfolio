@@ -11,10 +11,10 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { RiReactjsFill } from "react-icons/ri";
-import frontendImgUrl from "../assets/frontend_developer_career_path.png";
-import responsiveImgUrl from "../assets/responsive_web_design.png";
-import advancedImgUrl from "../assets/advanced_concepts.png";
-import { MdKeyboardArrowRight } from "react-icons/md";
+
+import certificateData from "../data/certificateData";
+import CardDetail from "../components/ProjectComponent/CardDetail.component";
+
 const About = () => {
   return (
     <section className="about__page">
@@ -66,11 +66,11 @@ const About = () => {
           <SiNextdotjs />
           <p>NextJS</p>
         </div>
-        <div className="tech-icon-wrap html">
+        <div className="tech-icon-wrap">
           <SiTailwindcss />
           <p>Tailwind</p>
         </div>
-        <div className="tech-icon-wrap html">
+        <div className="tech-icon-wrap">
           <BsGit />
           <p>Git</p>
         </div>
@@ -79,43 +79,9 @@ const About = () => {
       <div className="cert-container">
         <h2>CERTIFICATIONS</h2>
         <div className="cert-grid">
-          <div className="cert-grid-item">
-            <img src={frontendImgUrl} alt="" />
-            <p>Frontend Developer Career Path</p>
-            <Link
-              className="visit-cert-link"
-              to={"https://scrimba.com/certificate/ubwN7BTd/gfrontend/"}
-              target="_blank"
-            >
-              See <MdKeyboardArrowRight className="send-arrow" />
-            </Link>
-          </div>
-          <div className="cert-grid-item">
-            <img src={responsiveImgUrl} alt="" />
-            <p>Responsive Web Design</p>
-            <Link
-              className="visit-cert-link"
-              to={
-                "https://www.freecodecamp.org/certification/vujadind/responsive-web-design"
-              }
-              target="_blank"
-            >
-              See <MdKeyboardArrowRight className="send-arrow" />
-            </Link>
-          </div>
-          <div className="cert-grid-item">
-            <img src={advancedImgUrl} alt="" />
-            <p>JavaScript: The Advanced Concepts</p>
-            <Link
-              className="visit-cert-link"
-              to={
-                "https://www.udemy.com/certificate/UC-1b1370ed-201d-4230-9f52-3e940d5c8332/"
-              }
-              target="_blank"
-            >
-              See <MdKeyboardArrowRight className="send-arrow" />
-            </Link>
-          </div>
+          {certificateData.map((cert) => (
+            <CardDetail key={cert.id} project={cert} />
+          ))}
         </div>
       </div>
     </section>

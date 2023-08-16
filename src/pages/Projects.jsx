@@ -1,5 +1,5 @@
 import "../styles/projectsPage.css";
-import ProjectComponent from "../components/ProjectComponent/ProjectComponent";
+import CardDetail from "../components/ProjectComponent/CardDetail.component";
 import projectDetails from "../data/projectsData";
 const Projects = () => {
   return (
@@ -12,7 +12,7 @@ const Projects = () => {
       </div>
       <div className="projects__grid">
         {projectDetails.map((project) => (
-          <ProjectComponent key={project.id} project={project} />
+          <CardDetail key={project.id} project={project} />
         ))}
       </div>
     </section>

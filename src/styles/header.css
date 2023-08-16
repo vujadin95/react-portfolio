@@ -19,6 +19,9 @@ header {
 
 .black-bg {
   background-color: var(--black-100);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -80,7 +83,6 @@ header {
 @media (max-width: 848px) {
   .navigation__menu {
     gap: 1em;
-    transition: gap 200ms ease-in-out;
   }
 
   header {
@@ -96,6 +98,9 @@ header {
 @media (max-width: 688px) {
   header {
     background-color: var(--black-100);
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
   }
 
   .navigation__menu {

@@ -2,26 +2,50 @@ import { FiPaperclip } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
 import { BsDiscord, BsEnvelopeHeart } from "react-icons/bs";
 import { SiNetlify } from "react-icons/si";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/socialIcons.css";
+
 const SocialsIcons = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const iconsRef = useRef();
+  useEffect(() => {
+    const clickOutside = (e) => {
+      if (isOpen && iconsRef.current && !iconsRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", clickOutside);
+    return () => {
+      document.removeEventListener("mousedown", clickOutside);
+    };
+  }, [isOpen]);
+
+  const toggleOpen = () => setIsOpen((prevState) => !prevState);
 
   return (
-    <div className="social-icons">
+    <div ref={iconsRef} className="social-icons">
       {isOpen && (
         <div className="social-icons-container">
-          <Link to={"https://github.com/vujadin95"} target="_blank">
+          <Link
+            onClick={toggleOpen}
+            to={"https://github.com/vujadin95"}
+            target="_blank"
+          >
             <AiFillGithub />
           </Link>
-          <Link to={"https://discord.com/"} target="_blank">
+          <Link
+            onClick={toggleOpen}
+            to={"https://discord.com/"}
+            target="_blank"
+          >
             <BsDiscord />
           </Link>
-          <Link to={"mailto:vujke456@gmail.com"}>
+          <Link onClick={toggleOpen} to={"mailto:vujke456@gmail.com"}>
             <BsEnvelopeHeart />
           </Link>
           <Link
+            onClick={toggleOpen}
             to={"https://app.netlify.com/teams/vujadin95/sites"}
             target="_blank"
           >
@@ -30,7 +54,7 @@ const SocialsIcons = () => {
         </div>
       )}
       <div
-        onClick={() => setIsOpen((prevState) => !prevState)}
+        onClick={toggleOpen}
         className={`social-icons-btn ${isOpen && "isOpen"}`}
       >
         <FiPaperclip />

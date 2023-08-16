@@ -24,14 +24,19 @@ const Header = () => {
     };
   }, [isMobileNav]);
 
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header ref={navRef} className={isScrolled ? "black-bg" : ""}>
