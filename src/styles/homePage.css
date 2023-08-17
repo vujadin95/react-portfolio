@@ -104,4 +104,8 @@
     width: 100%;
     text-align: center;
   }
+
+  .hero-page-text-desc {
+    min-height: 115px;
+  }
 }

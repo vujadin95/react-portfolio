@@ -14,8 +14,7 @@ const ParticlesBackground = () => {
           value: 100,
         },
         color: {
-          // value: "#9ec8ff",
-          value: "#ffbe31",
+          value: ["#FFFFFF", "#FFD600", "#38BDF8"],
         },
         size: {
           value: 2,

@@ -1,5 +1,5 @@
 import "../styles/projectsPage.css";
-import CardDetail from "../components/ProjectComponent/CardDetail.component";
+import CardDetail from "../components/CardDetail/CardDetail.component";
 import projectDetails from "../data/projectsData";
 const Projects = () => {
   return (

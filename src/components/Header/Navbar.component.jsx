@@ -1,6 +1,6 @@
 import { BiHomeHeart } from "react-icons/bi";
 import { BsPerson, BsEnvelopeHeart } from "react-icons/bs";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { AiOutlineCode } from "react-icons/ai";
 
 import NavLinkComponent from "./NavLink.component";
 const navigationData = [
@@ -22,7 +22,7 @@ const navigationData = [
     id: 3,
     path: "/projects",
     label: "Projects",
-    icon: <AiOutlineFundProjectionScreen />,
+    icon: <AiOutlineCode />,
     activeStyle: { color: "#e6429c" },
   },
   {

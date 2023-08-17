@@ -13,7 +13,7 @@ import {
 import { RiReactjsFill } from "react-icons/ri";
 
 import certificateData from "../data/certificateData";
-import CardDetail from "../components/ProjectComponent/CardDetail.component";
+import CardDetail from "../components/CardDetail/CardDetail.component";
 
 const About = () => {
   return (

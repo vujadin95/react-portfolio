@@ -16,7 +16,7 @@ const CardDetail = ({ project }) => {
   } = project;
   return (
     <div className="card-wrapper">
-      <img className="card-img" src={imageUrl} alt="" />
+      <img loading="lazy" className="card-img" src={imageUrl} alt="" />
       <h3 className="card-title">{title}</h3>
       {description && <p className="card-desc">{description}</p>}
       <div className="card-button-container">

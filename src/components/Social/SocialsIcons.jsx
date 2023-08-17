@@ -1,5 +1,4 @@
-import { FiPaperclip } from "react-icons/fi";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { BsDiscord, BsEnvelopeHeart } from "react-icons/bs";
 import { SiNetlify } from "react-icons/si";
 import { useEffect, useRef, useState } from "react";
@@ -57,7 +56,7 @@ const SocialsIcons = () => {
         onClick={toggleOpen}
         className={`social-icons-btn ${isOpen && "isOpen"}`}
       >
-        <FiPaperclip />
+        <AiOutlineLink />
       </div>
     </div>
   );
