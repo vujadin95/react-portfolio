@@ -1,5 +1,7 @@
-import img from "../assets/home-image.png";
-import imgSmall from "../assets/home-image-small.png";
+// import img from "../assets/home-image.png";
+// import img from "../../public/assets/home-image.png";
+import img from "/assets/home-image.png";
+import imgSmall from "/assets/home-image-small.png";
 import Typewriter from "typewriter-effect";
 import "../styles/homePage.css";
 import { useState } from "react";

@@ -1,6 +1,6 @@
-import responsiveWebDesignImgUrl from "../assets/responsive_web_design.png";
-import frontendDeveloperCareerpathImg from "../assets/frontend_developer_career_path.png";
-import javascriptAdvancedConcepts from "../assets/advanced_concepts.png";
+import responsiveWebDesignImgUrl from "/assets/responsive_web_design.png";
+import frontendDeveloperCareerpathImg from "/assets/frontend_developer_career_path.png";
+import javascriptAdvancedConcepts from "/assets/advanced_concepts.png";
 export default [
   {
     id: 1,

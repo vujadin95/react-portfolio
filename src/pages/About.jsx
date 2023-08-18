@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import imgUrl from "../assets/about-img.png";
+import imgUrl from "/assets/about-img.png";
 import "../styles/aboutPage.css";
 import { AiFillHtml5 } from "react-icons/ai";
 import { BsGit } from "react-icons/bs";

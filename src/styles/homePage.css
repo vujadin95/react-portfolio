@@ -47,10 +47,10 @@
 }
 
 
-.heroLoading {
-  /* background-color: var(--white); */
-  /* filter: blur(10px); */
-}
+/* .heroLoading {
+  background-color: var(--white);
+  filter: blur(10px);
+} */
 
 @keyframes pulseHome {
   0% {

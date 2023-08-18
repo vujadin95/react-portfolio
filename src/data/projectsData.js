@@ -1,11 +1,11 @@
-import todoImg from "../assets/to-do-app.png";
-import quizzAppImg from "../assets/quizzical-app.png";
-import personalDashboardImg from "../assets/personal-dashboard.png";
-import vanLifeAppImg from "../assets/vanlife-app.png";
-import picSomeImg from "../assets/pic-some-1.png";
-import rolePlayingGameImg from "../assets/role-playing-game.png";
-import movieWatchlistImg from "../assets/movie-watchlist.png";
-import speedTypingGameImg from "../assets/speed-typing-game.png";
+import todoImg from "/assets/to-do-app.png";
+import quizzAppImg from "/assets/quizzical-app.png";
+import personalDashboardImg from "/assets/personal-dashboard.png";
+import vanLifeAppImg from "/assets/vanlife-app.png";
+import picSomeImg from "/assets/pic-some-1.png";
+import rolePlayingGameImg from "/assets/role-playing-game.png";
+import movieWatchlistImg from "/assets/movie-watchlist.png";
+import speedTypingGameImg from "/assets/speed-typing-game.png";
 
 export default [
   {
