@@ -14,13 +14,28 @@ import { RiReactjsFill } from "react-icons/ri";
 
 import certificateData from "../data/certificateData";
 import CardDetail from "../components/CardDetail/CardDetail.component";
+import { useState } from "react";
 
 const About = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const loaded = () => setIsImageLoaded(true);
+
   return (
     <section className="about__page">
       <div className="about-container">
-        <div className="about-container-image-wrapper">
-          <img className="about-image" src={imgUrl} alt="" />
+        <div
+          className={`about-container-image-wrapper ${
+            !isImageLoaded ? "aboutImgLoading" : ""
+          }`}
+        >
+          <img
+            className="about-image"
+            loading="lazy"
+            src={imgUrl}
+            alt=""
+            onLoad={loaded}
+          />
         </div>
         <div className="about-text-wrapper">
           <h1 className="about-text-title">Let me introduce myself</h1>

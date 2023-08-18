@@ -1,8 +1,11 @@
 import img from "../assets/home-image.png";
 import Typewriter from "typewriter-effect";
 import "../styles/homePage.css";
+import { useState } from "react";
 
 const Home = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const loaded = () => setIsImageLoaded(true);
   return (
     <section className="home-page">
       <div className="home-text-content">
@@ -28,8 +31,12 @@ const Home = () => {
           <p> Frontend Developer</p>
         </div>
       </div>
-      <div className="home-image-container">
-        <img src={img} alt="" />
+      <div
+        className={`home-image-container ${
+          !isImageLoaded ? "heroLoading" : ""
+        }`}
+      >
+        <img className="hero-img" src={img} alt="" onLoad={loaded} />
       </div>
     </section>
   );
