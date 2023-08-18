@@ -1,11 +1,15 @@
 import img from "../assets/home-image.png";
+import imgSmall from "../assets/home-image-small.png";
 import Typewriter from "typewriter-effect";
 import "../styles/homePage.css";
 import { useState } from "react";
 
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const loaded = () => setIsImageLoaded(true);
+  const loaded = () => setIsImageLoaded(false);
+  const smallImage = {
+    backgroundImage: `url(${imgSmall})`,
+  };
   return (
     <section className="home-page">
       <div className="home-text-content">
@@ -35,6 +39,7 @@ const Home = () => {
         className={`home-image-container ${
           !isImageLoaded ? "heroLoading" : ""
         }`}
+        style={!isImageLoaded ? smallImage : null}
       >
         <img className="hero-img" src={img} alt="" onLoad={loaded} />
       </div>

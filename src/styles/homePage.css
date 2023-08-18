@@ -39,17 +39,35 @@
   max-width: 600px;
   z-index: 2;
   animation: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
 }
 
 
 .heroLoading {
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  /* filter: blur(10px); */
+}
+
+@keyframes pulseHome {
+  0% {
+    opacity: 0.05;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0.05;
+  }
 }
 
 .home-image-container.heroLoading {
-  animation: pulse 2.5s infinite;
+  animation: pulseHome 2.5s infinite;
   border-radius: 5px;
 }
 
