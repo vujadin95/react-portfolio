@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const loaded = () => setIsImageLoaded(false);
+  const loaded = () => setIsImageLoaded(true);
   const smallImage = {
     backgroundImage: `url(${imgSmall})`,
   };
