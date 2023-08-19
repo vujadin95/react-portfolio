@@ -23,8 +23,7 @@ export default [
     id: 2,
     title: "Quizz App",
     description: `A fun short quiz app that uses the free Trivia API to display questions.
-					After answering all the questions, the correct answers are shown in green
-					and the wrong ones in red.`,
+					. You get five questions with four provided answers. When all questions are answered, the true ones are shown with green color and the wrong one are displayed in red.`,
     imageUrl: quizzAppImg,
     githubLink: "https://github.com/vujadin95/quizzical-app-react",
     liveDemoLink: "https://vd-react-quizzical.netlify.app/",
@@ -43,10 +42,7 @@ export default [
   {
     id: 4,
     title: "Vanlife App",
-    description: `Personal Dashboard is JavaScript project inspired by Momentum extension.
-					It's personalised dashboard that display's background image from free API
-					with weather information . Dashboard provides option to write checkable
-					focus.`,
+    description: `Vanlife is app in which I have learned about new react routed dom v6. Doing this app I've learned how to use routing from v6 including shared layout page (header), nested routes with relative paths, dynamic paths, protected routes and other.`,
     imageUrl: vanLifeAppImg,
     githubLink: "https://github.com/vujadin95/vanlife-react-app",
     liveDemoLink: "https://vd-vanlife-app.netlify.app/",
@@ -54,10 +50,7 @@ export default [
   {
     id: 5,
     title: "Pic Some App",
-    description: `Personal Dashboard is JavaScript project inspired by Momentum extension.
-					It's personalised dashboard that display's background image from free API
-					with weather information . Dashboard provides option to write checkable
-					focus.`,
+    description: `Pic Some App is app that is representation of a cart functionality for websites which are intended for online shopping. Here I used custom hover hook for displaying heart for liking the photo and plus sign for adding that photo to the cart.`,
     imageUrl: picSomeImg,
     githubLink: "https://github.com/vujadin95/shopping-cart-pic",
     liveDemoLink: "https://vd-pic-some-app.netlify.app/",
@@ -65,10 +58,7 @@ export default [
   {
     id: 6,
     title: "Role Playing Game",
-    description: `Personal Dashboard is JavaScript project inspired by Momentum extension.
-					It's personalised dashboard that display's background image from free API
-					with weather information . Dashboard provides option to write checkable
-					focus.`,
+    description: `This small application is build in plain JavaScript using class component. I've created class component Character which I used for wizard and for all monsters.  `,
     imageUrl: rolePlayingGameImg,
     githubLink: "https://github.com/vujadin95/Role-Playing-Game",
     liveDemoLink: "https://vd-role-playing-game.netlify.app/",
@@ -76,10 +66,7 @@ export default [
   {
     id: 7,
     title: "Movie Watchlist",
-    description: `Personal Dashboard is JavaScript project inspired by Momentum extension.
-					It's personalised dashboard that display's background image from free API
-					with weather information . Dashboard provides option to write checkable
-					focus.`,
+    description: `Movie Watchlist is app in which I leaded to use free API for movies. When user enter desired movie, input is used to find enetered movie in database and all available movies are displayed to the user. User have option to add particular movie to wishlist to which he can access by clicking the My Wishlist link. `,
     imageUrl: movieWatchlistImg,
     githubLink: "https://github.com/vujadin95/Movie-Watchlist",
     liveDemoLink: "https://vd-movie-watchlist.netlify.app/",
@@ -87,10 +74,7 @@ export default [
   {
     id: 8,
     title: "Speed Typing Game",
-    description: `Personal Dashboard is JavaScript project inspired by Momentum extension.
-					It's personalised dashboard that display's background image from free API
-					with weather information . Dashboard provides option to write checkable
-					focus.`,
+    description: `To test how fast you can type, you can use my custom speed typing app. By default given time is 10s but you can change number of seconds entering in the field. After clicking start, focus is automatically enabled in textare. After time is out, you get displayed how much words have you typed in the textarea.`,
     imageUrl: speedTypingGameImg,
     githubLink: "https://github.com/vujadin95/speed-typing-game",
     liveDemoLink: "https://vd-speed-typing-game.netlify.app/",
