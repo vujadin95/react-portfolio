@@ -12,7 +12,12 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .send("service_jqad06m", "template_xwhhvqn", data, "jSF9WVkwRknZMxdZo")
+      .send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_PUBLIC_KEY
+      )
       .then((response) => {
         setData({ name: "", email: "", message: "" });
         setIsNameInputFocused(false);
