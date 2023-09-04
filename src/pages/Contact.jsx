@@ -65,7 +65,7 @@ const Contact = () => {
         <p className="contact__page-desc">
           Please feel free to contact me about anything.
         </p>
-        <label className="name-label">
+        <label htmlFor="name" className="name-label">
           Name <span>*</span>
         </label>
         <input
@@ -80,12 +80,14 @@ const Contact = () => {
           focused={isNameInputFocused.toString()}
           className="input-name"
           disabled={status}
+          autoComplete="off"
+          id="name"
         />
         <span className="name-error">
           Your name should be 3-16 characters and shouldn't include any special
           character.
         </span>
-        <label>
+        <label htmlFor="email">
           Email <span>*</span>
         </label>
         <input
@@ -99,11 +101,13 @@ const Contact = () => {
           focused={isEmailInputFocused.toString()}
           className="input-email"
           disabled={status}
+          autoComplete="off"
+          id="email"
         />
         <span className="email-error">
           It doesn't look like a real email address to me?
         </span>
-        <label>Message</label>
+        <label htmlFor="message">Message</label>
         <textarea
           onChange={(e) => handleFormChange(e)}
           value={data.message}
@@ -112,6 +116,8 @@ const Contact = () => {
           placeholder="Tell me something..."
           disabled={status}
           maxLength={1000}
+          autoComplete="off"
+          id="message"
         />
         <button type="submit" disabled={data.name === "" || data.email === ""}>
           Send <MdKeyboardArrowRight className="send-arrow" />
